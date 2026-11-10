@@ -1,0 +1,4 @@
+# Layered hero art lives in Art/ and goes through Git LFS (see Gen 2 doc, asset pipeline).
+Art/** filter=lfs diff=lfs merge=lfs -text
+*.psd  filter=lfs diff=lfs merge=lfs -text
+*.procreate filter=lfs diff=lfs merge=lfs -text
