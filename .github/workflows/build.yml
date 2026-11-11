@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Configure (tests only, no JUCE)
-        run: cmake -S . -B build -DBLOODLINE_BUILD_PLUGINS=OFF -DCMAKE_BUILD_TYPE=Release
+        run: cmake -S bloodline -B build -DBLOODLINE_BUILD_PLUGINS=OFF -DCMAKE_BUILD_TYPE=Release
       - name: Build
         run: cmake --build build
       - name: Run offline engine tests
@@ -24,7 +24,7 @@ jobs:
         with:
           lfs: true
       - name: Configure
-        run: cmake -S . -B build -DBLOODLINE_BUILD_TESTS=OFF
+        run: cmake -S bloodline -B build -DBLOODLINE_BUILD_TESTS=OFF
       - name: Build GHOST VST3
         run: cmake --build build --config Release --target Ghost_VST3
       - uses: actions/upload-artifact@v4
